@@ -1,7 +1,7 @@
 import {
   Instrument_Serif,
   Geist,
-  Parkinsans,
+  Montserrat,
 } from "next/font/google";
 
 export const instrumentSerif = Instrument_Serif({
@@ -18,7 +18,7 @@ export const geist = Geist({
   variable: "--font-geist",
 });
 
-export const parkinsans = Parkinsans({
+export const parkinsans = Montserrat({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
   display: "swap",
