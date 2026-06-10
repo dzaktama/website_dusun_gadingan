@@ -78,6 +78,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "#profil", label: "Profil Dusun" },
     { href: "#umkm", label: "Katalog UMKM" },
+    { href: "#sosmed", label: "Media Sosial" },
     { href: "#lokasi", label: "Lokasi" },
   ];
 

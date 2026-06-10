@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { Product } from "@/types";
+import { SearchIcon } from "./Icons";
 import ProductCard from "./ProductCard";
 import SkeletonCard from "./SkeletonCard";
 
@@ -121,7 +122,9 @@ export default function CatalogClient({ products }: CatalogClientProps) {
       ) : (
         /* Empty state */
         <div className="flex flex-col items-center justify-center py-20 text-center">
-          <div className="text-5xl mb-4">🔍</div>
+          <div className="mb-4" style={{ color: "var(--text-muted)" }}>
+            <SearchIcon size={56} strokeWidth={1.2} />
+          </div>
           <h3
             className="text-xl text-[var(--text-primary)] mb-2"
             style={{ fontFamily: "var(--font-instrument-serif)" }}

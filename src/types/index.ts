@@ -20,7 +20,7 @@ export interface StatCardData {
   value: string;
   label: string;
   subtext: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 export interface ApiResponse {

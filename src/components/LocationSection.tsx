@@ -1,3 +1,36 @@
+import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon } from "./Icons";
+
+const contactItems = [
+  {
+    icon: <MapPinIcon size={22} />,
+    label: "Alamat",
+    value: "Dusun Gadingan, Desa Ngluwar, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah",
+    href: "https://maps.google.com/?q=Ngluwar,+Magelang",
+    linkText: "Buka di Google Maps",
+  },
+  {
+    icon: <PhoneIcon size={22} />,
+    label: "WhatsApp",
+    value: "+62 821-2204-8502",
+    href: "https://wa.me/6282122048502",
+    linkText: "Chat sekarang",
+  },
+  {
+    icon: <MailIcon size={22} />,
+    label: "Email",
+    value: "kkn149.gadingan@gmail.com",
+    href: "mailto:kkn149.gadingan@gmail.com",
+    linkText: "Kirim email",
+  },
+  {
+    icon: <ClockIcon size={22} />,
+    label: "Jam Respons",
+    value: "Senin–Sabtu, 08.00–17.00 WIB",
+    href: null,
+    linkText: null,
+  },
+];
+
 export default function LocationSection() {
   return (
     <section
@@ -56,47 +89,18 @@ export default function LocationSection() {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-5">
-            {[
-              {
-                icon: "📍",
-                label: "Alamat",
-                value: "Dusun Gadingan, Desa Ngluwar, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah",
-                href: "https://maps.google.com/?q=Ngluwar,+Magelang",
-                linkText: "Buka di Google Maps →",
-              },
-              {
-                icon: "📱",
-                label: "WhatsApp",
-                value: "+62 821-2204-8502",
-                href: "https://wa.me/6282122048502",
-                linkText: "Chat sekarang →",
-              },
-              {
-                icon: "📧",
-                label: "Email",
-                value: "kkn149.gadingan@gmail.com",
-                href: "mailto:kkn149.gadingan@gmail.com",
-                linkText: "Kirim email →",
-              },
-              {
-                icon: "🕘",
-                label: "Jam Respons",
-                value: "Senin–Sabtu, 08.00–17.00 WIB",
-                href: null,
-                linkText: null,
-              },
-            ].map((item) => (
+            {contactItems.map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-4 p-5 rounded-2xl"
+                className="flex items-start gap-4 p-5 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "var(--bg-card)",
                   border: "1px solid var(--border-subtle)",
                 }}
               >
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0"
-                  style={{ backgroundColor: "var(--bg-secondary)" }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: "var(--bg-secondary)", color: "var(--accent-neon)" }}
                 >
                   {item.icon}
                 </div>
@@ -118,7 +122,7 @@ export default function LocationSection() {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-xs font-semibold transition-opacity hover:opacity-70"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
                       style={{
                         fontFamily: "var(--font-parkinsans)",
                         color: "var(--accent-neon)",
@@ -126,6 +130,10 @@ export default function LocationSection() {
                       }}
                     >
                       {item.linkText}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
                     </a>
                   )}
                 </div>

@@ -16,8 +16,8 @@ export default function StatCard({ data }: StatCardProps) {
     >
       {/* Icon */}
       <div
-        className="text-3xl mb-3 leading-none"
-        role="img"
+        className="mb-3 leading-none flex items-center justify-center w-12 h-12 rounded-xl mx-auto"
+        style={{ backgroundColor: "var(--bg-secondary)", color: "var(--accent-neon)" }}
         aria-label={data.label}
       >
         {data.icon}

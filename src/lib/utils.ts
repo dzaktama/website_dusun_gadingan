@@ -17,7 +17,7 @@ export function generateWhatsAppLink(
     minimumFractionDigits: 0,
   }).format(price);
 
-  const message = `Halo ${sellerName}, saya tertarik dengan produk *${productName}* (${formattedPrice}) dari Katalog UMKM Dusun Gadingan. Apakah masih tersedia? Terima kasih 🙏`;
+  const message = `Halo ${sellerName}, saya tertarik dengan produk *${productName}* (${formattedPrice}) dari Katalog UMKM Dusun Gadingan. Apakah masih tersedia? Terima kasih.`;
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

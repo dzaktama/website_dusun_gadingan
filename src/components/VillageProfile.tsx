@@ -1,30 +1,57 @@
 import StatCard from "./StatCard";
 import { StatCardData } from "@/types";
+import {
+  UsersIcon,
+  HouseIcon,
+  MapIcon,
+  HandshakeIcon,
+  WheatIcon,
+  StoreIcon,
+  MapPinIcon,
+} from "./Icons";
 
 const stats: StatCardData[] = [
   {
     value: "613",
     label: "Total Penduduk",
     subtext: "316 Laki-laki · 297 Perempuan",
-    icon: "👥",
+    icon: <UsersIcon size={24} />,
   },
   {
     value: "200",
     label: "Kepala Keluarga",
     subtext: "Tersebar di 4 RT dalam 1 RW",
-    icon: "🏠",
+    icon: <HouseIcon size={24} />,
   },
   {
     value: "4 RT / 1 RW",
     label: "Struktur Wilayah",
     subtext: "Administrasi dusun yang solid",
-    icon: "🗺️",
+    icon: <MapIcon size={24} />,
   },
   {
     value: "KKN 149",
     label: "Sinergi Pemberdayaan",
     subtext: 'UPN "Veteran" Yogyakarta 2026',
-    icon: "🤝",
+    icon: <HandshakeIcon size={24} />,
+  },
+];
+
+const highlights = [
+  {
+    icon: <WheatIcon size={22} />,
+    title: "Pertanian Subur",
+    desc: "Lahan agraris produktif sebagai fondasi ekonomi dusun",
+  },
+  {
+    icon: <StoreIcon size={22} />,
+    title: "UMKM Aktif",
+    desc: "Industri rumah tangga makanan ringan khas Gadingan",
+  },
+  {
+    icon: <MapPinIcon size={22} />,
+    title: "Lokasi Strategis",
+    desc: "Akses mudah via jalur utama Magelang–Yogyakarta",
   },
 ];
 
@@ -114,8 +141,8 @@ export default function VillageProfile() {
               className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base"
               style={{ fontFamily: "var(--font-geist)" }}
             >
-              Melalui program KKN Bela Negara 84 UPN "Veteran" Yogyakarta oleh
-              Kelompok 149 "Sinergi Gadingan", potensi UMKM lokal kini hadir
+              Melalui program KKN Bela Negara 84 UPN &quot;Veteran&quot; Yogyakarta oleh
+              Kelompok 149 &quot;Sinergi Gadingan&quot;, potensi UMKM lokal kini hadir
               secara digital, membuka akses pasar yang lebih luas bagi produk-produk
               otentik buatan tangan warga Gadingan.
             </p>
@@ -126,27 +153,11 @@ export default function VillageProfile() {
             className="p-8 sm:p-10 flex flex-col justify-center gap-4"
             style={{ backgroundColor: "var(--bg-secondary)" }}
           >
-            {[
-              {
-                icon: "🌾",
-                title: "Pertanian Subur",
-                desc: "Lahan agraris produktif sebagai fondasi ekonomi dusun",
-              },
-              {
-                icon: "🏪",
-                title: "UMKM Aktif",
-                desc: "Industri rumah tangga makanan ringan khas Gadingan",
-              },
-              {
-                icon: "📍",
-                title: "Lokasi Strategis",
-                desc: "Akses mudah via jalur utama Magelang–Yogyakarta",
-              },
-            ].map((item) => (
+            {highlights.map((item) => (
               <div key={item.title} className="flex items-start gap-4">
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center text-lg shrink-0"
-                  style={{ backgroundColor: "var(--bg-card)" }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: "var(--bg-card)", color: "var(--accent-neon)" }}
                 >
                   {item.icon}
                 </div>
