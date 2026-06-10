@@ -23,7 +23,7 @@ const stats: StatCardData[] = [
   {
     value: "KKN 149",
     label: "Sinergi Pemberdayaan",
-    subtext: "UPN "Veteran" Yogyakarta 2026",
+    subtext: 'UPN "Veteran" Yogyakarta 2026',
     icon: "🤝",
   },
 ];
