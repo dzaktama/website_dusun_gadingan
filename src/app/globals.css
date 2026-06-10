@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ─── Font variables ─── */
+@theme {
+  --font-heading: var(--font-instrument-serif), Georgia, serif;
+  --font-body: var(--font-geist), system-ui, sans-serif;
+  --font-accent: var(--font-parkinsans), "Helvetica Neue", sans-serif;
+}
+
+/* ─── Light mode tokens ─── */
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f3f4f6;
+  --bg-card: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --accent-neon: #25d366;
+  --accent-neon-hover: #1da851;
+  --border-subtle: #e5e7eb;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Dark mode tokens (applied via .dark class on <html> via next-themes) ─── */
+.dark {
+  --bg-primary: #12261e;
+  --bg-secondary: #1a3328;
+  --bg-card: #1e332a;
+  --text-primary: #e8f0ed;
+  --text-secondary: #a8c4b8;
+  --text-muted: #6b9c87;
+  --accent-neon: #d4ff39;
+  --accent-neon-hover: #c0eb2a;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Base resets ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Typography helpers ─── */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ─── Safe area for mobile notches ─── */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
